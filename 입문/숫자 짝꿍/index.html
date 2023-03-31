@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://school.programmers.co.kr/learn/courses/30/lessons/131128
+    function solution(X, Y) {
+      var answer = '';
+      
+      const xnum = new Array(10).fill(0) // [0,0,0,0,0,0,0,0,0,0]
+      const ynum = new Array(10).fill(0)
+
+      const xcount = X.split('').map(num => xnum[num]++);
+      const ycount = Y.split('').map(num => ynum[num]++)
+      
+      console.log(xnum, ynum)
+      const partners = [];
+      for (let i = 0; i < 10; i++) {
+        const min = Math.min(xnum[i], ynum[i])
+        for (let j = 0; j < min; j++) {
+          partners.push(i);
+        }
+      }
+      
+      if (!partners.length) return answer = '-1';
+      const sort = partners.sort((a, b) => b - a);
+      if (sort.every(v => v === 0)) return answer = "0"
+      answer = sort.join('');
+      return answer;
+    }
+  </script>
+</body>
+</html>
