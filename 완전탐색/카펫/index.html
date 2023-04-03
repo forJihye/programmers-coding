@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://school.programmers.co.kr/learn/courses/30/lessons/42842?language=javascript
+
+    // 풀이 과정 참고 https://husk321.tistory.com/290
+    function solution(brown, yellow) {
+      const total = brown + yellow;
+      
+      for (let i = 0; i < total; i++) {
+        if (total % i === 0 && i >= 3) {
+          // console.log(i)
+        }
+      }
+    }
+
+    const brown = 10
+    const yellow = 2;
+    const result = solution(brown, yellow)
+    console.log('result', result)
+  </script>
+</body>
+</html>
