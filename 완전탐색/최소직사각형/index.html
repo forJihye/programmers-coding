@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://school.programmers.co.kr/learn/courses/30/lessons/86491
+    function solution(sizes) {
+      var answer = 0;
+
+      const width = [];
+      const height = [];
+
+      for(let i = 0; i < sizes.length; i++) {
+        const [w, h] = sizes[i];
+        width.push(Math.max(w, h))
+        height.push(Math.min(w, h))
+      }
+      const maxWidth = width.sort((a, b) => b - a)
+      const minHeight = height.sort((a, b) => b - a)
+      
+      return answer = maxWidth[0] * minHeight[0];
+    }
+
+    // const sizes = [[60, 50], [30, 70], [60, 30], [80, 40]]
+    // const sizes = [[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]	
+    const sizes = [[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]
+    const result = solution(sizes)
+    console.log('result', result)
+  </script>
+</body>
+</html>
