@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- https://school.programmers.co.kr/learn/courses/30/lessons/120904 -->
+  <script>
+    function solution(num, k) {
+      var answer = 0;
+      const nums = String(num).split('');
+      const index = nums.indexOf(String(k))
+      answer = index < 0 ? -1 : index + 1;
+      return answer;
+    }
+
+    console.log(solution(123456, 7))
+  </script>
+</body>
+</html>

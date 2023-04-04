@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://school.programmers.co.kr/learn/courses/30/lessons/120862
+    function solution(numbers) {
+      var answer = 0;
+      const result = []
+      for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++)  {
+          result.push(numbers[i] * numbers[j])
+        }
+      }
+      const max = result.sort((a, b) => b - a)[0]
+      answer = max;
+      return answer;
+    }
+
+    // const numbers = [1, 2, -3, 4, -5];
+    // const numbers = [0, -31, 24, 10, 1, 9];
+    const numbers = [10, 20, 30, 5, 5, 20];
+    const r = solution(numbers);
+    console.log('result', r)
+  </script>
+</body>
+</html>

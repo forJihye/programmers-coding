@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://school.programmers.co.kr/learn/courses/30/lessons/120895
+    function solution(my_string, num1, num2) {
+      var answer = '';
+      
+      const strs = my_string.split('');
+      const a = strs[num1]
+      const b = strs[num2]
+      
+      strs.splice(num1, 1, b)
+      strs.splice(num2, 1, a)
+      
+      return answer = strs.join('');
+    }
+    const my_string = "I love you"
+    const num1 = 3;
+    const num2 = 6;
+    console.log(solution(my_string, num1, num2))
+  </script>
+</body>
+</html>
