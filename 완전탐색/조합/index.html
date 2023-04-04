@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 조함 nCr = nCn-r이므로 10C3 = 10C7
+
+    // 재귀 함수 사용
+    // const getCombinations = (list, selectNum) => {
+    //   const result = [];  
+    //   if (selectNum === 1) return list.map(el => [el]);
+
+    //   list.forEach((fixed, index, array) => {
+    //     const rest = array.slice(index + 1); // 현재 fixed를 제외한 나어지 요소
+    //     const combinations = getCombinations(rest, selectNum - 1);
+    //     const attached = combinations.map(el => [fixed, ...el]);
+    //     result.push(...attached)
+    //   });
+    //   return result;
+    // } 
+    // const list = [1,2,3,4]
+    // const result = getCombinations(list, 3);
+    // console.log(result)
+
+    
+
+    // 풀이
+    /*
+      1번 조합
+      fixed 1 - rest [2,3,4] - getCombination([2,3,4], 2)
+      fixed 2 - rest [3,4] - getCombination([3,4], 1)
+        if (selectnum === 1) return [[3], [4]]
+        combination = [[3], [4]]
+        attached = [ [2,3], [2,4] ]
+        현재 result  [ [2,3], [2,4] ]
+      fixed 3 - rest [4] - getCombination([4], 1)
+        combination = [[4]]
+        attached = [ [3,4] ]
+        현재 result  [ [2,3], [2,4], [3,4] ]
+      fiexd 4 - rest [] - - getCombination([], 1)
+        combination = []
+        attached = [ ]
+        현재 result  [ [2,3], [2,4], [3,4] ]
+
+      return results = [[2,3], [2,4], [3,4]]
+      combinations = [[2,3], [2,4], [3,4]]
+      attatched = [[1,2,3],[1,2,4],[1,3,4]]
+      현재 results = [[1,2,3],[1,2,4],[1,3,4]]
+
+      2번 조합
+      fixed 2 - rest [3, 4] - getCombination([3,4], 2)
+      fixed 3 = rest [4] - getCombination([4], 1)
+        if (selectnum === 1) return [[4]]
+        combination = [ [4] ]
+        attached = [ [3, 4] ]
+        현재 return [[3, 4]]
+      fiexd 4 = rest [] - getCombination([4], 1)
+        if (selectnum === 1) return [ ]
+        combination = [ ]
+        attached = [ ]
+        현재 return [[3, 4]]
+      return results = [[3,4]]
+      combinations = [[3,4]]
+      attatched = [[2,3,4]]
+      현재 results = [[1,2,3],[1,2,4],[1,3,4], [2,3,4]]    
+    */
+  </script>
+</body>
+</html>

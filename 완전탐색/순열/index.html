@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 순열은 조합과 rest 배열을 구하는 방식만 다르고 매커니즘은 같다
+    // 순열에서는 현재 i번째 아이템을 제외한 나머지 아이템으로 배열을 재구성해 재귀의 매개변수로 전달
+    const getPermutations = (array, selectNumber) => {
+      const results = [];
+      if (selectNumber === 1) {
+        return array.map((element) => [element]);
+      }
+      array.forEach((fixed, index, origin) => {
+        const rest = [...origin.slice(0, index), ...origin.slice(index + 1)];
+        console.log(rest)
+        const permutations = getPermutations(rest, selectNumber - 1);
+        const attached = permutations.map((permutation) => [fixed, ...permutation]);
+
+        results.push(...attached);
+      });
+      return results;
+    };
+
+    console.log(getPermutations([1, 2, 3, 4], 3));
+
+  </script>
+</body>
+</html>
