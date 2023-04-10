@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(before, after) {
+      if (before.length !== after.length) {
+        return 0;
+      }
+      var answer = 0;
+      
+      before = [...before].sort();
+      after = [...after].sort();
+
+      answer = before.filter((s, i) => s === after[i]).length === after.length ? 1 : 0;
+      return answer;
+
+      // return before.split('').sort().join('') === after.split('').sort().join('') ? 1 : 0;
+    }
+    const before = 'allpe'
+    const after = 'apple';
+    console.log(solution(before, after))
+  </script>
+</body>
+</html>

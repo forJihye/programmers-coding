@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(i, j, k) {
+      var answer = 0;
+      const numstrs = []
+      for (i; i <= j; i++) {
+        if (i === k || String(i).includes(String(k))) numstrs.push(String(i))
+      }
+      const r = numstrs.join('').split('').filter(s => Number(s) === Number(k))
+      return answer = r.length;
+    }
+    const i = 1
+    const j = 13
+    const k = 1
+    console.log(solution(i, j, k))
+  </script>
+</body>
+</html>
